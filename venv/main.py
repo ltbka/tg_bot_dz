@@ -9,12 +9,12 @@ from Handlers.start import start_router
 from Handlers.picture import pic_router
 from Handlers.generic_answer import echo_router
 from Handlers.shop import shop_router
+from Handlers.menu import menu_router
 async def main():
 
     await set_my_menu()
     dp.include_router(start_router)
-    dp.include_router(pic_router)
-    dp.include_router(shop_router)
+    dp.include_router(menu_router)
     dp.include_router(echo_router)
 
     # запуск бота

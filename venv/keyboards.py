@@ -7,21 +7,45 @@ def start_keyboard():
         inline_keyboard=[
 
             [
-                types.InlineKeyboardButton(text='наш сайт', url="https://online.geeks.kg/")
+                types.InlineKeyboardButton(text='Наш сайт', url="https://mypizza.kg/"),
+                types.InlineKeyboardButton(text='Инстаграм', url="https://www.instagram.com/mypizzakg/?hl=en")
             ],
 
             [
-                types.InlineKeyboardButton(text='наш инст', url="https://www.instagram.com/")
+                types.InlineKeyboardButton(text='Контакты', callback_data='contacts'),
+                types.InlineKeyboardButton(text='Адрес', callback_data='adress')
             ],
 
             [
-                types.InlineKeyboardButton(text='o nas', callback_data='about us')
-            ],
-
-            [
-                types.InlineKeyboardButton(text='donate', callback_data='donate us')
+                types.InlineKeyboardButton(text='Меню', callback_data='Menu' )
             ]
 
         ]
     )
     return keyboard
+
+def menu_keyboard():
+    keyboard = types.InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                types.InlineKeyboardButton(text='Пиццы', callback_data='food'),
+                types.InlineKeyboardButton(text='Горячие Блюда', callback_data='food')
+            ],
+
+            [
+                types.InlineKeyboardButton(text='Гарниры', callback_data='food'),
+                types.InlineKeyboardButton(text='Напитки', callback_data='food')
+            ]
+
+        ]
+    )
+    return keyboard
+#
+#
+# def order_kb():
+#     kb = types.InlineKeyboardMarkup(
+#         inline_keyboard=[
+#             [types.InlineKeyboardButton(text='Заказать', callback_data="order_")]
+#         ]
+#     )
+

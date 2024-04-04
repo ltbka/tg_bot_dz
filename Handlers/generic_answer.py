@@ -7,6 +7,6 @@ echo_router = Router()
 @echo_router.message()
 async def echo(message: types.Message):
     # logging.info(message)
-    await message.answer('неизветная команда!'
+    await message.answer('Неизветная команда!'
                          'попробуйте следующие команды:\n'
-                         '/start /random_pic /myinfo')
+                         '/start\n/menu\n')
