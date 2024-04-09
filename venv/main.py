@@ -4,12 +4,15 @@ from aiogram import Bot, Dispatcher, types
 from os import getenv
 import logging
 
+
 from config import bot, dp, set_my_menu
 from Handlers.start import start_router
 from Handlers.picture import pic_router
 from Handlers.generic_answer import echo_router
 from Handlers.shop import shop_router
 from Handlers.menu import menu_router
+
+
 async def main():
 
     await set_my_menu()

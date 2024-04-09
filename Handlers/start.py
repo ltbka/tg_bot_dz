@@ -1,6 +1,6 @@
 from aiogram import Router, types, F
 from aiogram.filters import Command
-from keyboards import start_keyboard, menu_keyboard
+from keyboards import start_keyboard
 
 
 start_router = Router()
@@ -8,7 +8,8 @@ start_router = Router()
 
 @start_router.message(Command('start'))
 async def start_cmd(message: types.Message):
-    await message.answer(f'привет {message.from_user.first_name}!', reply_markup=start_keyboard())
+    file = types.FSInputFile("D:/pyth/pythonProject25/images/imperia.jpg")
+    await message.answer_photo(photo=file, reply_markup=start_keyboard(), caption='Добро пожаловать в империю пиццы!')
 
 
 @start_router.callback_query(F.data == 'contacts')
@@ -24,12 +25,6 @@ async def donate_us(callback: types.CallbackQuery):
     # await callback.answer('o nas')
     await callback.answer()
     await callback.message.answer('г.Бишкек, пр.Чуй, 92')
-
-
-@start_router.callback_query(F.data == 'Menu')
-async def menu(callback: types.CallbackQuery):
-    await callback.answer()
-    await callback.message.answer(text='Вот наше меню', reply_markup=menu_keyboard())
 
 
 @start_router.callback_query(F.data == 'food')

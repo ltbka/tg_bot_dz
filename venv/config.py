@@ -8,6 +8,7 @@ load_dotenv()
 bot = Bot(token=getenv('BOT_TOKEN'))
 dp = Dispatcher()
 
+
 async def set_my_menu():
     await bot.set_my_commands(
         [
